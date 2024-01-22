@@ -67,6 +67,10 @@ export IMAGE_NAME=oracle/database:${DB_VERSION}-ee
 export ORADATA_VOLUME=~/oradata
 export DG_DIR=~/docker-dataguard
 ```
+## Make sure oradata volume exists
+```
+test -e "$ORADATA_VOLUME"  || mkdir "$ORADATA_VOLUME"
+```
 
 ## Copy the downloaded Oracle database installation files to the DG directory:
 ```
