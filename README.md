@@ -76,6 +76,11 @@ cp LINUX.X64_193000_db_home.zip $DG_DIR/$DB_VERSION
 ## Navigate to the DG directory
 `cd $DG_DIR`
 
+## Create docker-compose.yml
+```
+./createCompose.sh
+```
+
 ## Run the build to create the oracle/datbase:19.3.0-ee Docker image
 `./buildDockerImage.sh -v 19.3.0 -e`
 
