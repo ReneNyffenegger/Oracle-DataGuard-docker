@@ -80,10 +80,10 @@ cp LINUX.X64_193000_db_home.zip $DG_DIR/$DB_VERSION
 `./buildDockerImage.sh -v 19.3.0 -e`
 
 ## Run compose (detached)
-`docker-compose up -d`
+`docker compose up -d`
 
 ## Tail the logs
-`docker-compose logs -f`
+`docker compose logs -f`
 
 # Testing
 The build has been tested by starting the databases under docker-compose and running DGMGRL validations and switchover through a variety of scenarios. It correctly resumes the configuration across stops/starts of docker-compose.
@@ -116,7 +116,7 @@ The `createCompose.sh` script will create the yaml file and the necessary TNS en
 # Cleanup
 ## To stop compose, remove any existing image and prune the images:
 ```
-docker-compose down
+docker compose down
 docker rmi oracle/database:19.3.0-ee
 docker image prune <<< y
 ```
